@@ -63,7 +63,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
   };
 
   // Encabezado con fondo de color
-  doc.setFillColor(...primaryColor);
+  doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2]);
   doc.rect(0, 0, pageWidth, 50, "F");
   
   doc.setTextColor(255, 255, 255);
@@ -79,7 +79,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
   yPosition = 65;
 
   // Información de la factura
-  doc.setTextColor(...textColor);
+  doc.setTextColor(textColor[0], textColor[1], textColor[2]);
   doc.setFontSize(18);
   doc.setFont("helvetica", "bold");
   doc.text(`Factura #${factura.id}`, pageWidth - margin, yPosition, { align: "right" });
@@ -108,7 +108,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
   // Información del Paciente
   if (factura.paciente) {
     checkPageBreak(50);
-    doc.setFillColor(...lightGray);
+    doc.setFillColor(lightGray[0], lightGray[1], lightGray[2]);
     
     // Calcular altura dinámica según la cantidad de información
     const pacienteInfo = [];
@@ -131,7 +131,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
     const altura = 20 + (pacienteInfo.length * 6);
     doc.roundedRect(margin, yPosition, pageWidth - 2 * margin, altura, 3, 3, "F");
     
-    doc.setTextColor(...textColor);
+    doc.setTextColor(textColor[0], textColor[1], textColor[2]);
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("Datos del Paciente", margin + 5, yPosition + 10);
@@ -154,10 +154,10 @@ export const generarPDFFactura = (factura: FacturaData) => {
   } else {
     // Si no hay datos del paciente, mostrar un mensaje indicando que no hay información
     checkPageBreak(30);
-    doc.setFillColor(...lightGray);
+    doc.setFillColor(lightGray[0], lightGray[1], lightGray[2]);
     doc.roundedRect(margin, yPosition, pageWidth - 2 * margin, 25, 3, 3, "F");
     
-    doc.setTextColor(...textColor);
+    doc.setTextColor(textColor[0], textColor[1], textColor[2]);
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("Datos del Paciente", margin + 5, yPosition + 10);
@@ -173,10 +173,10 @@ export const generarPDFFactura = (factura: FacturaData) => {
   // Información del Tratamiento
   if (factura.tratamiento) {
     checkPageBreak(50);
-    doc.setFillColor(...lightGray);
+    doc.setFillColor(lightGray[0], lightGray[1], lightGray[2]);
     doc.roundedRect(margin, yPosition, pageWidth - 2 * margin, 40, 3, 3, "F");
     
-    doc.setTextColor(...textColor);
+    doc.setTextColor(textColor[0], textColor[1], textColor[2]);
     doc.setFontSize(14);
     doc.setFont("helvetica", "bold");
     doc.text("Datos del Tratamiento", margin + 5, yPosition + 10);
@@ -219,7 +219,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
     yPosition += 10;
 
     // Encabezado de tabla
-    doc.setFillColor(...primaryColor);
+    doc.setFillColor(primaryColor[0], primaryColor[1], primaryColor[2]);
     doc.roundedRect(margin, yPosition, pageWidth - 2 * margin, 10, 3, 3, "F");
     
     doc.setTextColor(255, 255, 255);
@@ -231,14 +231,14 @@ export const generarPDFFactura = (factura: FacturaData) => {
     doc.text("Subtotal", pageWidth - margin - 5, yPosition + 7, { align: "right" });
     
     yPosition += 12;
-    doc.setTextColor(...textColor);
+    doc.setTextColor(textColor[0], textColor[1], textColor[2]);
     doc.setFont("helvetica", "normal");
 
     factura.detalleFactura.forEach((detalle, index) => {
       checkPageBreak(25);
       
       if (index > 0 && index % 2 === 0) {
-        doc.setFillColor(...lightGray);
+        doc.setFillColor(lightGray[0], lightGray[1], lightGray[2]);
         doc.rect(margin, yPosition - 3, pageWidth - 2 * margin, 12, "F");
       }
       
@@ -260,7 +260,7 @@ export const generarPDFFactura = (factura: FacturaData) => {
     
     // Total
     checkPageBreak(20);
-    doc.setDrawColor(...primaryColor);
+    doc.setDrawColor(primaryColor[0], primaryColor[1], primaryColor[2]);
     doc.setLineWidth(0.5);
     doc.line(margin + 100, yPosition, pageWidth - margin, yPosition);
     yPosition += 10;

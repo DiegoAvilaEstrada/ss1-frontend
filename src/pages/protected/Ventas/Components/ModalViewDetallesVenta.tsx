@@ -81,7 +81,7 @@ export default function ModalViewDetallesVenta({
               </Typography>
               <Divider sx={{ mb: 2 }} />
               <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <Typography variant="body2" color="text.secondary">
                     ID del Detalle
                   </Typography>
@@ -89,7 +89,7 @@ export default function ModalViewDetallesVenta({
                     {detalle.id || "-"}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <Typography variant="body2" color="text.secondary">
                     Cantidad
                   </Typography>
@@ -97,7 +97,7 @@ export default function ModalViewDetallesVenta({
                     {detalle.cantidad || "-"}
                   </Typography>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid size={{ xs: 12, sm: 6 }}>
                   <Typography variant="body2" color="text.secondary">
                     Costo Total
                   </Typography>
@@ -116,7 +116,7 @@ export default function ModalViewDetallesVenta({
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       ID del Producto
                     </Typography>
@@ -124,7 +124,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.producto.id || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Nombre del Producto
                     </Typography>
@@ -132,7 +132,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.producto.nombreProducto || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Precio de Venta
                     </Typography>
@@ -140,7 +140,7 @@ export default function ModalViewDetallesVenta({
                       Q {detalle.producto.precioVenta?.toFixed(2) || "0.00"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12}>
+                  <Grid size={{ xs: 12 }}>
                     <Typography variant="body2" color="text.secondary">
                       Descripción
                     </Typography>
@@ -149,7 +149,7 @@ export default function ModalViewDetallesVenta({
                     </Typography>
                   </Grid>
                   {detalle.producto.tipoProducto && (
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <Typography variant="body2" color="text.secondary">
                         Tipo de Producto
                       </Typography>
@@ -170,7 +170,7 @@ export default function ModalViewDetallesVenta({
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       ID de la Factura
                     </Typography>
@@ -178,7 +178,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.factura.id || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Fecha de Emisión
                     </Typography>
@@ -188,7 +188,7 @@ export default function ModalViewDetallesVenta({
                         : "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Monto Total de la Factura
                     </Typography>
@@ -208,7 +208,7 @@ export default function ModalViewDetallesVenta({
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       DPI
                     </Typography>
@@ -216,7 +216,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.factura.paciente.dpi || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Nombre Completo
                     </Typography>
@@ -225,7 +225,7 @@ export default function ModalViewDetallesVenta({
                         "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Teléfono
                     </Typography>
@@ -233,7 +233,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.factura.paciente.telefono || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Email
                     </Typography>
@@ -242,7 +242,7 @@ export default function ModalViewDetallesVenta({
                     </Typography>
                   </Grid>
                   {detalle.factura.paciente.nit && (
-                    <Grid item xs={12} sm={6}>
+                    <Grid size={{ xs: 12, sm: 6 }}>
                       <Typography variant="body2" color="text.secondary">
                         NIT
                       </Typography>
@@ -263,7 +263,7 @@ export default function ModalViewDetallesVenta({
                 </Typography>
                 <Divider sx={{ mb: 2 }} />
                 <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       ID del Tratamiento
                     </Typography>
@@ -271,7 +271,7 @@ export default function ModalViewDetallesVenta({
                       {detalle.factura.tratamiento.id || "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Fecha de Inicio
                     </Typography>
@@ -281,7 +281,7 @@ export default function ModalViewDetallesVenta({
                         : "-"}
                     </Typography>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Estado del Tratamiento
                     </Typography>
@@ -304,7 +304,7 @@ export default function ModalViewDetallesVenta({
                       />
                     </Box>
                   </Grid>
-                  <Grid item xs={12} sm={6}>
+                  <Grid size={{ xs: 12, sm: 6 }}>
                     <Typography variant="body2" color="text.secondary">
                       Requiere Medicación
                     </Typography>
@@ -318,13 +318,13 @@ export default function ModalViewDetallesVenta({
                   </Grid>
                   {detalle.factura.tratamiento.psicologo && (
                     <>
-                      <Grid item xs={12}>
+                      <Grid size={{ xs: 12 }}>
                         <Divider sx={{ my: 1 }} />
                         <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
                           Psicólogo Asignado
                         </Typography>
                       </Grid>
-                      <Grid item xs={12} sm={6}>
+                      <Grid size={{ xs: 12, sm: 6 }}>
                         <Typography variant="body2" color="text.secondary">
                           DPI
                         </Typography>
@@ -332,7 +332,7 @@ export default function ModalViewDetallesVenta({
                           {detalle.factura.tratamiento.psicologo.dpi || "-"}
                         </Typography>
                       </Grid>
-                      <Grid item xs={12} sm={6}>
+                      <Grid size={{ xs: 12, sm: 6 }}>
                         <Typography variant="body2" color="text.secondary">
                           Nombre Completo
                         </Typography>
