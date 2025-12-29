@@ -1,0 +1,25 @@
+/* Reset básico */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+/* Fondo floral profesional */
+body {
+  background-image:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.55) 0%,
+      rgba(255,255,255,0.20) 55%,
+      rgba(255,255,255,0.10) 100%
+    ),
+    url("/flores.png");
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  background-color: #ffffff;
+}

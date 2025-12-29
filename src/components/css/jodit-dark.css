@@ -1,0 +1,14 @@
+.jodit_theme_dark {
+  background-color: #1e1e1e !important;
+  color: #e6e6e6 !important;
+}
+
+.jodit_theme_dark .jodit-wysiwyg {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+}
+
+.jodit_theme_dark .jodit-toolbar__box {
+  background-color: #2a2a2a !important;
+  border-bottom: 1px solid #444 !important;
+}
