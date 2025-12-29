@@ -1,7 +1,4 @@
 import { api } from "./api.service";
-import axios from "axios";
-
-const localHost = import.meta.env.LOCAL_HOST || "http://localhost:8080";
 
 interface LoginRequest {
   username: string;
@@ -14,20 +11,12 @@ interface VerifyCodeRequest {
 
 // Login para paciente
 export const loginPaciente = (data: LoginRequest) => {
-  return axios
-    .post(`${localHost}/login/paciente`, data, {
-      headers: { "Content-Type": "application/json", "X-Skip-Auth": "true" },
-    })
-    .then((res) => res.data);
+  return api.postWithoutPrefix("/login/paciente", data, false);
 };
 
 // Login para empleado
 export const loginEmpleado = (data: LoginRequest) => {
-  return axios
-    .post(`${localHost}/login/empleado`, data, {
-      headers: { "Content-Type": "application/json", "X-Skip-Auth": "true" },
-    })
-    .then((res) => res.data);
+  return api.postWithoutPrefix("/login/empleado", data, false);
 };
 
 // Verificar código para paciente
@@ -42,12 +31,8 @@ export const verifyCodeEmpleado = (data: VerifyCodeRequest) => {
 
 // Función de compatibilidad (por si se usa en otros lugares)
 export const loginUser = (data: LoginRequest) => {
-  // Por defecto usa login de empleado, ahora usando LOCAL_HOST
-  return axios
-    .post(`${localHost}/login/empleado`, data, {
-      headers: { "Content-Type": "application/json", "X-Skip-Auth": "true" },
-    })
-    .then((res) => res.data);
+  // Por defecto usa login de empleado
+  return api.postWithoutPrefix("/login/empleado", data, false);
 };
 
 export const resetPasswordInit = (data: any) => {
